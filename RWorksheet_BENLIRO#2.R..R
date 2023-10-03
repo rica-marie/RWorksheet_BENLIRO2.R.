@@ -1,10 +1,11 @@
 #1. Create a vector using : operator
 #a. Sequence from -5 to 5. Write the R code and its output. Describe its output.
-seq1<-c(-5:5)
-seq1
+
+#The sequence started from negative 5 and ended in a positive integer since the condition of the seq stated from negative to positive
+seq(-5,5)
 
 #Output: -5 -4 -3 -2 -1  0  1  2  3  4  5
-#
+
 
 #b. x <- 1:7. What will be the value of x? Answer: [1] 1 2 3 4 5 6 7
 x <- 1:7
@@ -114,3 +115,85 @@ powerful_celebs$power_ranking[powerful_celebs$power_ranking==19] <- 15
 powerful_celebs$pay[powerful_celebs$pay==75] <- 90
 powerful_celebs
 
+
+#c.
+library(readr)
+PowerRankingCelebs <-read.csv("Power_Ranking.csv", header = TRUE, sep = ",")
+PowerRankingCelebs
+
+#d.
+
+PowerRankingCelebs$Title[10:20]
+
+#9.
+
+#a.
+library(readxl)
+hotels <-read_excel("hotels-vienna.xlsx")
+
+
+#b. 
+dim(hotels)
+
+#The data set has 428 rows and 24 columns 
+
+#c.
+hotels[c("country", "neighbourhood","price","stars","accommodation_type","rating")]
+
+#d.
+new.RData <- hotels
+new.RData
+
+#e.
+head(new.RData)
+tail(new.RData)
+
+#10.
+#a. 
+vegetables <- list("cabbage", "pumpkin", "kangkong", "pechay","potato", "talong", "mushroom", "green beans", "Onion", "string beans")
+vegetables
+
+#output
+#[[1]]
+#[1] "cabbage"      "pumpkin"      "kangkong"    
+#[4] "pechay"       "potato"       "talong"      
+#[7] "mushroom"     "green beans"  "Onion"       
+#[10] "string beans"
+
+#b.
+vegetables1 <- append(vegetables, c("mustasa", "sayote"))
+vegetables1
+
+#c. 
+vegetables2 <- append(vegetables, c("ampalaya", "malunggay","tomato", "okra"), after=5)
+vegetables2
+
+#d.
+vegetables3 <- vegetables[c(-5, -10,-15)]
+vegetables3
+#output
+#[[1]]
+#[1] "cabbage"
+
+#[[2]]
+#[1] "pumpkin"
+
+#[[3]]
+#[1] "kangkong"
+
+#[[4]]
+#[1] "pechay"
+
+#[[5]]
+#[1] "talong"
+
+#[[6]]
+#[1] "mushroom"
+
+#[[7]]
+#[1] "green beans"
+
+#[[8]]
+#[1] "Onion"
+
+length(vegetables3) #output: 8
